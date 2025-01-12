@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ginofood/screens/cart_screen.dart';
-import 'package:ginofood/screens/category_screen.dart';
-import 'package:ginofood/screens/favorite_screen.dart';
+import 'package:ginofood/components/product_items_constructor.dart';
+import 'package:ginofood/pages/tabs/cart_screen.dart';
+import 'package:ginofood/pages/tabs/category_screen.dart';
+import 'package:ginofood/pages/tabs/favorite_screen.dart';
+import 'package:ginofood/components/product_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    const HomePageContent(),
+    HomePageContent(),
     const CategoryScreen(),
     const FavoriteScreen(),
     const CartScreen(),
@@ -66,7 +68,52 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class HomePageContent extends StatelessWidget {
-  const HomePageContent({super.key});
+  HomePageContent({super.key});
+
+  final List<ProductItems> _productItems = [
+    ProductItems(
+      id: 1,
+      name: 'Chili Pepper',
+      price: 150,
+      description: 'Bowl',
+      image: 'images/Red-Peppers.png',
+    ),
+    ProductItems(
+      id: 2,
+      name: 'Lettuce',
+      price: 200,
+      description: 'Bunch',
+      image: 'images/pngwing.png',
+    ),
+    ProductItems(
+      id: 3,
+      name: 'Bell Pepper',
+      price: 500,
+      description: 'Bowl',
+      image: 'images/Peppers.png',
+    ),
+    ProductItems(
+      id: 4,
+      name: 'Ripe Tomatoes',
+      price: 200,
+      description: 'Bowl',
+      image: 'images/Tomatoes.png',
+    ),
+    ProductItems(
+      id: 5,
+      name: 'Onions',
+      price: 200,
+      description: 'Bowl',
+      image: 'images/onions.png',
+    ),
+    ProductItems(
+      id: 6,
+      name: 'Water Melon',
+      price: 200,
+      description: 'Bowl',
+      image: 'images/waterMelon.png',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -150,61 +197,11 @@ class HomePageContent extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
-          height: 420,
-          child: Expanded(
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 45, vertical: 110),
-              child: Row(
-                children: [
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: const Color(0xffE3F6DC),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Image.asset('images/Red-Peppers.png'),
-                          const SizedBox(height: 8),
-                          const Text(
-                            'Ripe Tomato',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const SizedBox(height: 4),
-                              const Text(
-                                'N150/ Bowl',
-                                style: TextStyle(
-                                    color: Color(0xffE7AC07),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18),
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.add,
-                                  color: Colors.green,
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
+        Expanded(
+          child: ProductItem(
+            productItems: _productItems,
           ),
-        )
+        ),
       ],
     );
   }
@@ -282,35 +279,3 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
     );
   }
 }
-
-
-
-  //  Column(
-  //         children: [
-  //           Row(
-  //             children: [
-  //               Image.asset('images/'),
-  //               const SizedBox(width: 20),
-  //               const Text(
-  //                 'Ripe Tomato',
-  //                 style: TextStyle(color: Colors.black, fontSize: 18),
-  //               ),
-  //               Column(
-  //                 children: [
-  //                   const Text(
-  //                     'Ripe Tomato',
-  //                     style: TextStyle(color: Colors.black, fontSize: 18),
-  //                   ),
-  //                   IconButton(
-  //                     onPressed: () {},
-  //                     icon: const Icon(
-  //                       Icons.plus_one,
-  //                       color: Colors.green,
-  //                     ),
-  //                   )
-  //                 ],
-  //               )
-  //             ],
-  //           )
-  //         ],
-  //       )

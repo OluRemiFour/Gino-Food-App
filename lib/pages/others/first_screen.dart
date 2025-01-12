@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ginofood/onboarding/second_screen.dart';
+import 'package:ginofood/pages/others/second_screen.dart';
 
 class GinoFood extends StatefulWidget {
   const GinoFood({super.key});
@@ -16,7 +16,6 @@ class _GinoFoodState extends State<GinoFood> {
     super.initState();
 
     Future.delayed(const Duration(seconds: 5), () {
-      // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, GinoSecond.id);
     });
   }
@@ -31,12 +30,12 @@ class _GinoFoodState extends State<GinoFood> {
           children: [
             Hero(
               tag: 'logo',
-              child: Container(
-                child: Image.asset('images/logo.png'),
+              child: SizedBox(
                 height: 120.0,
+                child: Image.asset('images/logo.png'),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

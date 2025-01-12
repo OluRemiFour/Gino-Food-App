@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ginofood/screens/create_account.dart';
-import 'package:ginofood/screens/signin_account.dart';
+import 'package:ginofood/auth/create_account.dart';
+import 'package:ginofood/auth/signin_account.dart';
 
 class CTAButtomText extends StatelessWidget {
   CTAButtomText(

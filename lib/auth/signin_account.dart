@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ginofood/constant.dart';
-import 'package:ginofood/screens/c_t_a_buttom_text.dart';
-import 'package:ginofood/screens/c_t_a_button.dart';
-import 'package:ginofood/screens/create_account.dart';
-import 'package:ginofood/screens/home.dart';
+import 'package:ginofood/components/constant.dart';
+import 'package:ginofood/utils/c_t_a_buttom_text.dart';
+import 'package:ginofood/utils/c_t_a_button.dart';
+import 'package:ginofood/auth/create_account.dart';
+import 'package:ginofood/pages/tabs/home.dart';
 
 class SigninAccount extends StatefulWidget {
   const SigninAccount({super.key});

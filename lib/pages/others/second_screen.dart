@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ginofood/onboarding/third_screen.dart';
+import 'package:ginofood/pages/others/third_screen.dart';
 
 class GinoSecond extends StatelessWidget {
   const GinoSecond({super.key});
@@ -20,7 +20,8 @@ class GinoSecond extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.black.withOpacity(0.7),
+            // color: Colors.black.withOpacity(0.7),
+            color: Colors.black.withValues(alpha: 0.7),
           ),
           Center(
             child: Column(
